@@ -7,7 +7,7 @@
 #include "Car.h"
 
 // Добавление автомобиля.
-void Autosalon::AddDevice()
+void Autosalon::AddAuto()
 {
 	int autoCount{ 0 };
 	do
@@ -18,7 +18,7 @@ void Autosalon::AddDevice()
 	} while (autoCount <= 0);
 
 	int inputNumOfAuto{ 1 };
-	vector<Car>::iterator it;
+	vector<Car*>::iterator it;
 	for (it = m_v.begin(); it != m_v.end(); it++)
 	{
 		cout << "\nВыберите " << inputNumOfAuto << " автомобиль: ";
@@ -32,11 +32,11 @@ void Autosalon::AddDevice()
 		{
 		case 1:
 			Volvo * vlv = new Volvo;
-			m_v.push_back(**&vlv);
+			m_v.push_back(vlv);
 			break;
 		case 2:
 			Zaporozhets * zap = new Zaporozhets;
-			m_v.push_back(**&zap);
+			m_v.push_back(zap);
 			break;
 		default:
 			break;
@@ -68,10 +68,12 @@ void Autosalon::AddDevice()
 // Печать всего списка автомобилей.
 void Autosalon::PrintAll() const
 {
-	for (int i = 0; i < m_v.size(); i++)
+	vector<Car*>::const_iterator it = m_v.begin();
+	int count{ 1 };
+	for (; it != m_v.end(); it++)
 	{
-		cout << endl << "Устройство № " << i + 1 << endl;
-		m_v[i].Print();
+		cout << endl << "Устройство № " << count++ << endl;
+		it->;
 		cout << "-------------------------------------------------------" << endl;
 	}
 }

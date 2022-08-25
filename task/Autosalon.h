@@ -8,10 +8,10 @@ using namespace std;
 
 class Autosalon abstract	
 {
-	vector<Car> m_v;
+	vector<Car*> m_v;
 public:
 	// Добавление автомобиля.
-	void AddDevice();
+	void AddAuto();
 
 	// Печать всего списка автомобилей.
 	void PrintAll() const;

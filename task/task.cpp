@@ -14,6 +14,8 @@
 #include <iostream>
 #include <conio.h>
 
+#include "Autosalon.h"
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -33,6 +35,181 @@ int main()
 	записанных различными функциями вывода, в изображения, отображаемые в окне консоли.
 	*/
 
+	Autosalon list;	// Создание массива.
 
+	while (true)
+	{
+		system("cls");
+		cout << "\tГлавное меню." << endl
+			<< "\n1. Добавить автомобиль."
+			<< "\n2. Удалить автомобиль."
+			<< "\n3. Печать носителей."
+			<< "\n4. Изменить автомобиль."
+			<< "\n5. Поиск носителя."
+			<< "\n6. Сортировка носителя."
+			<< "\n7. Выход" << endl;
+		int choice_mainMenu{};
+		int number{};
+		cout << "\n >>> : ";
+		cin >> choice_mainMenu;
+		switch (choice_mainMenu)
+		{
+		case 1:														// 1. Добавить автомобиль. 
+			system("cls");
+			cout << "Главное меню."
+				"\n\t1. Добавить автомобиль."
+				<< endl;
+			list.AddAuto();
+			cout << "\nГотово !" << endl
+				<< "\nДля продолжения нажмите любую клавишу." << endl;
+			_getch();
+			break;
+		case 2:														// 2. Удалить автомобиль. 
+			system("cls");
+			cout << "Главное меню."
+				"\n\t2. Удалить автомобиль."
+				<< endl;
+			if (list.get_size() > 0)
+			{
+				list.PrintAll();
+				cout << "\nВведите номер элемента в списке для удаления: ";
+				cin >> number;
+				list.Delete(number);
+				cout << "\nГотово !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			else
+			{
+				cout << endl << "Список пуст !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			break;
+		case 3:														// 3. Печать носителей. 
+			system("cls");
+			cout << "Главное меню."
+				"\n\t3. Печать носителей."
+				<< endl;
+			if (list.get_size() > 0)
+			{
+				cout << "\n1. Печать всего списка носителей."
+					<< "\n2. Печать всех USB."
+					<< "\n3. Печать всех HDD."
+					<< "\n4. Печать всех DVD." << endl;
+				int choice{ 0 };
+				cout << "\n >>> : ";
+				cin >> choice;
+				switch (choice)
+				{
+				case 1:												// 1. Печать всего списка носителей.
+					system("cls");
+					cout << "Главное меню."
+						"\n\t3. Печать носителей."
+						"\n\t\t1. Печать всего списка носителей."
+						<< endl;
+					list.PrintAll();
+					cout << "\nГотово !" << endl
+						<< "\nДля продолжения нажмите любую клавишу." << endl;
+					_getch();
+					break;
+				case 2:												// 2. Печать всех USB.
+					system("cls");
+					cout << "Главное меню."
+						"\n\t3. Печать носителей."
+						"\n\t\t2. Печать всех USB."
+						<< endl;
+					list.PrintSelective(choice);
+					cout << "\nГотово !" << endl
+						<< "\nДля продолжения нажмите любую клавишу." << endl;
+					_getch();
+					break;
+				case 3:												// 3. Печать всех HDD.
+					system("cls");
+					cout << "Главное меню."
+						"\n\t3. Печать носителей."
+						"\n\t\t3. Печать всех HDD."
+						<< endl;
+					list.PrintSelective(choice);
+					cout << "\nГотово !" << endl
+						<< "\nДля продолжения нажмите любую клавишу." << endl;
+					_getch();
+					break;
+				case 4:												// 4. Печать всех DVD.
+					system("cls");
+					cout << "Главное меню."
+						"\n\t3. Печать носителей."
+						"\n\t\t4. Печать всех DVD."
+						<< endl;
+					list.PrintSelective(choice);
+					cout << "\nГотово !" << endl
+						<< "\nДля продолжения нажмите любую клавишу." << endl;
+					_getch();
+					break;
+				default:
+					cout << "Ошибка !" << endl;
+					break;
+				}
+			}
+			else
+			{
+				cout << endl << "Список пуст !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			break;
+		case 4:														// 4. Изменить автомобиль.
+			system("cls");
+			cout << "Главное меню."
+				"\n\t4. Изменить автомобиль."
+				<< endl;
+			if (list.get_size() > 0)
+			{
+				list.PrintAll();
+				cout << "\nВведите номер элемента в списке: ";
+				cin >> number;
+				list.Change(number);
+				cout << "\nГотово !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			else
+			{
+				cout << endl << "Список пуст !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			break;
+		case 5:														// 5. Поиск носителя.
+			system("cls");
+			cout << "Главное меню."
+				"\n\t5. Поиск носителя."
+				<< endl;
+			if (list.get_size() > 0)
+			{
+				list.Search();
+				cout << "\nГотово !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			else
+			{
+				cout << endl << "Список пуст !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			break;
+		case 6:														// 6. Выход 
+			if (list.get_size() > 0)
+			{
+				list.Save();
+				cout << "\nДанные успешно сохранены в файл !" << endl;
+			}
+			return 0;
+		default:
+			cout << "Ошибка !" << endl;
+			break;
+		}
+	}
 
 }

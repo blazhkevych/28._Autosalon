@@ -198,9 +198,17 @@ int main()
 			if (list.get_size() > 0)
 			{
 				list.Sort();
-				cout << "\nДанные успешно отсортированы в файл !" << endl;
+				cout << "\nГотово !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
 			}
-			return 0;
+			else
+			{
+				cout << endl << "Список пуст !" << endl
+					<< "\nДля продолжения нажмите любую клавишу." << endl;
+				_getch();
+			}
+			break;
 		case 7:														// 7. Выход 
 			if (list.get_size() > 0)
 			{

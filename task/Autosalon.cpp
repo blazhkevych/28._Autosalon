@@ -416,12 +416,6 @@ void Autosalon::Load()
 	in.close();
 }
 
-// Сортировка по "1 - Название автомобиля".
-bool compare()
-{
-
-}
-
 // Сортировка по заданному критерию.
 void Autosalon::Sort()
 {
@@ -430,51 +424,56 @@ void Autosalon::Sort()
 		<< "\n2 - Год выпуска."
 		<< "\n3 - Объем двигателя."
 		<< "\n4 - Цена."
-		<< "\n5 - Скорость."
-		<< "\n6 - Количество владельцев."
 		<< "\nВведите номер критерия для сортировки >>> : ";
 	int var;
 	cin >> var;
 
-	vector<Car*>::const_iterator it = m_v.begin();
 	int i{ 0 };
 
 	switch (var)
 	{
 	case 1: // 1 - Название автомобиля.
 	{
-		for (; it != m_v.end(); it++)
-		{
-
-
-		}
-
-		PrintAll();
+		sort
+		(
+			m_v.begin(), m_v.end(), [](Car* c1, Car* c2)
+			{
+				return c1->get_title() < c2->get_title();
+			}
+		);
 		break;
 	}
 	case 2: // 2 - Год выпуска.
 	{
-
+		sort
+		(
+			m_v.begin(), m_v.end(), [](Car* c1, Car* c2)
+			{
+				return c1->get_yearOfIssue() < c2->get_yearOfIssue();
+			}
+		);
 		break;
 	}
 	case 3: // 3 - Объем двигателя.
 	{
-
+		sort
+		(
+			m_v.begin(), m_v.end(), [](Car* c1, Car* c2)
+			{
+				return c1->get_engineVolume() < c2->get_engineVolume();
+			}
+		);
 		break;
 	}
 	case 4: // 4 - Цена.
 	{
-
-		break;
-	}
-	case 5: // 5 - Скорость.
-	{
-
-		break;
-	}
-	case 6: // 6 - Количество владельцев.
-	{
-
+		sort
+		(
+			m_v.begin(), m_v.end(), [](Car* c1, Car* c2)
+			{
+				return c1->get_price() < c2->get_price();
+			}
+		);
 		break;
 	}
 	default:
@@ -482,9 +481,3 @@ void Autosalon::Sort()
 		break;
 	}
 }
-
-// Сравнение автомобилей.
-//bool Autosalon::operator<(const Car& other) const
-//{
-//	return m_ < other.age;
-//}

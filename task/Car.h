@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Car // Абстрактный базовый класс «Car».
+class Car abstract // Абстрактный базовый класс «Car».
 {
 protected:
 	string m_title;			// Название автомобиля.
@@ -54,4 +54,3 @@ public:
 	// Чтение объекта "Car" из текстового файла.
 	virtual void Read(ifstream& in);
 };
-

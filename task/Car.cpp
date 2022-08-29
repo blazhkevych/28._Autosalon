@@ -42,10 +42,10 @@ double Car::get_price() { return m_price; }
 // Печать объекта "Car".
 void Car::Print()
 {
-	cout << "Название автомобиля." << m_title << endl
-		<< "Год выпуска." << m_yearOfIssue << endl
-		<< "Объем двигателя." << m_engineVolume << endl
-		<< "Цена." << m_price << endl;
+	cout << "Название автомобиля: " << m_title << endl
+		<< "Год выпуска: " << m_yearOfIssue << endl
+		<< "Объем двигателя: " << m_engineVolume << endl
+		<< "Цена: " << m_price << endl;
 }
 
 // Запись объекта "Car" в текстовый файл.
@@ -61,7 +61,6 @@ void Car::Write(ofstream& out)
 void Car::Read(ifstream& in)
 {
 	in.get(); // Убираем "\n", который записан после количества записываемых в файл объектов.
-	getline(in, m_title);
 	in >> m_yearOfIssue;
 	in >> m_engineVolume;
 	in >> m_price;

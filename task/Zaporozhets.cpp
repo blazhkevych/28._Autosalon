@@ -1,9 +1,9 @@
-#include "Zaporozhets.h"
+п»ї#include "Zaporozhets.h"
 
 #include <iostream>
 #include <fstream>
 
-// Конструктор без параметров.
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ.
 Zaporozhets::Zaporozhets() :Car(), m_numberOfOwners(0) { m_title = "Zaporozhets"; }
 
 Zaporozhets::Zaporozhets(string title, int yearOfIssue, double engineVolume, double price, int m_numberOfOwners)
@@ -11,31 +11,31 @@ Zaporozhets::Zaporozhets(string title, int yearOfIssue, double engineVolume, dou
 	m_title = "Zaporozhets";
 }
 
-// Деструктор.
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ.
 Zaporozhets::~Zaporozhets() = default;
 
-// Установить значение поля "Скорость".
+// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РЎРєРѕСЂРѕСЃС‚СЊ".
 void Zaporozhets::set_numberOfOwners(int numberOfOwners) { m_numberOfOwners = numberOfOwners; }
 
-// Получить значение поля "Скорость".
+// РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РЎРєРѕСЂРѕСЃС‚СЊ".
 int Zaporozhets::get_numberOfOwners() { return m_numberOfOwners; }
 
-// Печать объекта "Zaporozhets".
+// РџРµС‡Р°С‚СЊ РѕР±СЉРµРєС‚Р° "Zaporozhets".
 void Zaporozhets::Print()
 {
 	cout << endl;
 	Car::Print();
-	cout << "Количество владельцев: " << m_numberOfOwners << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РІР»Р°РґРµР»СЊС†РµРІ: " << m_numberOfOwners << endl;
 }
 
-// Запись объекта "Zaporozhets" в текстовый файл.
+// Р—Р°РїРёСЃСЊ РѕР±СЉРµРєС‚Р° "Zaporozhets" РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р».
 void Zaporozhets::Write(ofstream& out)
 {
 	Car::Write(out);
 	out << m_numberOfOwners << "\n";
 }
 
-// Чтение объекта "Zaporozhets" из текстового файла.
+// Р§С‚РµРЅРёРµ РѕР±СЉРµРєС‚Р° "Zaporozhets" РёР· С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°.
 void Zaporozhets::Read(ifstream& in)
 {
 	Car::Read(in);

@@ -1,32 +1,32 @@
-#pragma once
+п»ї#pragma once
 
 #include "Car.h"
 
 class Zaporozhets :	public Car
 {
-	int m_numberOfOwners; // Количество владельцев.
+	int m_numberOfOwners; // РљРѕР»РёС‡РµСЃС‚РІРѕ РІР»Р°РґРµР»СЊС†РµРІ.
 public:
-	// Конструктор без параметров.
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ.
 	Zaporozhets();
 
-	// Конструктор со всеми параметрами.
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕ РІСЃРµРјРё РїР°СЂР°РјРµС‚СЂР°РјРё.
 	Zaporozhets(string title, int yearOfIssue, double engineVolume, double price, int m_numberOfOwners);
 
-	// Деструктор.
+	// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ.
 	~Zaporozhets() override;
 
-	// Установить значение поля "Количество владельцев".
+	// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РљРѕР»РёС‡РµСЃС‚РІРѕ РІР»Р°РґРµР»СЊС†РµРІ".
 	void set_numberOfOwners(int speed);
 
-	// Получить значение поля "Количество владельцев".
+	// РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РљРѕР»РёС‡РµСЃС‚РІРѕ РІР»Р°РґРµР»СЊС†РµРІ".
 	int get_numberOfOwners();
 
-	// Печать объекта "Zaporozhets".
+	// РџРµС‡Р°С‚СЊ РѕР±СЉРµРєС‚Р° "Zaporozhets".
 	void Print() override;
 
-	// Запись объекта "Zaporozhets" в текстовый файл.
+	// Р—Р°РїРёСЃСЊ РѕР±СЉРµРєС‚Р° "Zaporozhets" РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р».
 	void Write(ofstream& out) override;
 
-	// Чтение объекта "Zaporozhets" из текстового файла.
+	// Р§С‚РµРЅРёРµ РѕР±СЉРµРєС‚Р° "Zaporozhets" РёР· С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°.
 	void Read(ifstream& in) override;
 };

@@ -1,9 +1,9 @@
-#include "Volvo.h"
+п»ї#include "Volvo.h"
 
 #include <iostream>
 #include <fstream>
 
-// Конструктор без параметров.
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ.
 Volvo::Volvo() :Car(), m_speed(0) { m_title = "Volvo"; }
 
 Volvo::Volvo(string title, int yearOfIssue, double engineVolume, double price, double speed)
@@ -11,31 +11,31 @@ Volvo::Volvo(string title, int yearOfIssue, double engineVolume, double price, d
 	m_title = "Volvo";
 }
 
-// Деструктор.
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ.
 Volvo::~Volvo() = default;
 
-// Установить значение поля "Скорость".
+// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РЎРєРѕСЂРѕСЃС‚СЊ".
 void Volvo::set_speed(double speed) { m_speed = speed; }
 
-// Получить значение поля "Скорость".
+// РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ "РЎРєРѕСЂРѕСЃС‚СЊ".
 double Volvo::get_speed() { return m_speed; }
 
-// Печать объекта "Volvo".
+// РџРµС‡Р°С‚СЊ РѕР±СЉРµРєС‚Р° "Volvo".
 void Volvo::Print()
 {
 	cout << endl;
 	Car::Print();
-	cout << "Скорость: " << m_speed << endl;
+	cout << "РЎРєРѕСЂРѕСЃС‚СЊ: " << m_speed << endl;
 }
 
-// Запись объекта "Volvo" в текстовый файл.
+// Р—Р°РїРёСЃСЊ РѕР±СЉРµРєС‚Р° "Volvo" РІ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р».
 void Volvo::Write(ofstream& out)
 {
 	Car::Write(out);
 	out << m_speed << "\n";
 }
 
-// Чтение объекта "Volvo" из текстового файла.
+// Р§С‚РµРЅРёРµ РѕР±СЉРµРєС‚Р° "Volvo" РёР· С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°.
 void Volvo::Read(ifstream& in)
 {
 	Car::Read(in);
